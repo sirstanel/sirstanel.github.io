@@ -52,12 +52,7 @@ function GenerateTriggers() {
   var inputVal = document.getElementById("input").value;
   var obj = JSON.parse(inputVal)
   var i;
-  var outputStr = "Trigger("Force 1"){
-  Conditions:
-    Elapsed Time(At least, 0);
-  Actions:
-    Set Resources("Current Player", Set To, 50, ore);
-  }";
+  var outputStr = "";
   for (i = 0; i < obj.buildSteps.length; i++) {
     outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsDelayed);
   }
