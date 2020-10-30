@@ -39,10 +39,9 @@ function GenerateTrigger(buildStep, secondsLate) {
   var buildingShortName = buildStep.building.substr(buildStep.building.indexOf(" ") + 1);
   return `Trigger("Force 1"){
   Conditions:
-   <!-- Command("Current Player", "${buildStep.building}", At most, ${buildStep.num - 1}); //-->
     Elapsed Time(At least, ${igtSecondsLate});
   Actions:
-    Display Text Message(Always Display, "${buildingShortName} is more than ${secondsLate} seconds late");
+    Display Text Message(Always Display, "${buildingShortName}");
   }
   `
 }
