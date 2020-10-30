@@ -36,7 +36,6 @@
 <textarea class="textarea" rows=50 cols=200 id="output" placeholder="output"></textarea>
 
 <script>
-	
 function GenerateTrigger(buildStep, secondsDelayed) {
   var time = buildStep.time.split(":");
   var igtSecondsDelayed = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsDelayed)) * 1.5);
@@ -58,7 +57,7 @@ function GenerateTriggers() {
   for (i = 0; i < obj.buildSteps.length; i++) {
     outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsDelayed);
   }	
-  document.getElementById("output").innerHTML = "Test" + outputStr;
+  document.getElementById("output").innerHTML = "Trigger("Force 1"){<br>Conditions:<br>		Elapsed Time(At least, 0);<br>		Actions:<br>		Set Resources("Current Player", Set To, 50, ore);<br>}<br>" + outputStr;
   return inputVal
 }
 
