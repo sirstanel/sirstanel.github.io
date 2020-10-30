@@ -2,30 +2,30 @@
 <html>
 <body>
 <font size ="+2">
-<a href="https://github.com/sirstanel/sirstanel.github.io">User Guide</a><br>
+<a href="https://github.com/sirstanel/sirstanel.github.io">Github link</a><br>
 </font>
 
 <textarea class="textarea" rows=50 cols=70 id="input" value="input">
 {
-  "_comment": "Sample build",
-  "secondsLate": -3,
+  "Sample build order",
+  "secondsDelayed": -3,
   "buildSteps":[
-    {"building":"Terran Barracks",         "time":"1:28"},
-    {"building":"Terran Supply Depot",     "time":"2:20"},
-    {"building":"Terran Command Center",   "time":"2:43"},
-    {"building":"Terran Barracks",         "time":"3:25"},
-    {"building":"Terran Refinery",         "time":"3:39"},
-    {"building":"Terran Academy",          "time":"4:05"},
-    {"building":"Terran Bunker",           "time":"4:18"},
-    {"building":"Terran Comsat Station",   "time":"5:14"},
-    {"building":"Terran Engineering Bay",  "time":"5:17"},
-    {"building":"Terran Barracks",         "time":"5:23"},
-    {"building":"Terran Missile Turret",   "time":"6:00"},
-    {"building":"Terran Factory",          "time":"6:56"},
-    {"building":"Terran Refinery",         "time":"7:08"},
-    {"building":"Terran Barracks",         "time":"7:35"},
-    {"building":"Terran Starport",         "time":"7:58"},
-    {"building":"Terran Barracks",         "time":"8:07"}
+    {"text":"Terran Barracks",         "time":"0:01"},
+    {"text":"Terran Supply Depot",     "time":"0:16"},
+    {"text":"Terran Command Center",   "time":"0:29"},
+    {"text":"Terran Barracks",         "time":"0:38"},
+    {"text":"Terran Refinery",         "time":"0:42"},
+    {"text":"Terran Academy",          "time":"0:50"},
+    {"text":"Terran Bunker",           "time":"0:57"},
+    {"text":"Terran Comsat Station",   "time":"1:12"},
+    {"text":"Terran Engineering Bay",  "time":"1:25"},
+    {"text":"Terran Barracks",         "time":"1:40"},
+    {"text":"Terran Missile Turret",   "time":"1:48"},
+    {"text":"Terran Factory",          "time":"1:51"},
+    {"text":"Terran Refinery",         "time":"2:14"},
+    {"text":"Terran Barracks",         "time":"2:25"},
+    {"text":"Terran Starport",         "time":"2:28"},
+    {"text":"Terran Barracks",         "time":"2:41"}
   ]
 }
 </textarea>
@@ -33,15 +33,15 @@
 <textarea class="textarea" rows=50 cols=70 id="output" placeholder="output"></textarea>
 
 <script>
-function GenerateTrigger(buildStep, secondsLate) {
+function GenerateTrigger(buildStep, secondsDelayed) {
   var time = buildStep.time.split(":");
-  var igtSecondsLate = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsLate)) * 1.5);
-  var buildingShortName = buildStep.building.substr(buildStep.building);
+  var igtSecondsDelayed = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsDelayed)) * 1.5);
+  var textShortName = buildStep.text.substr(buildStep.text);
   return `Trigger("Force 1"){
   Conditions:
-    Elapsed Time(At least, ${igtSecondsLate});
+    Elapsed Time(At least, ${igtSecondsDelayed});
   Actions:
-    Display Text Message(Always Display, "${buildingShortName}");
+    Display Text Message(Always Display, "${textShortName}");
   }
   `
 }
@@ -52,7 +52,7 @@ function GenerateTriggers() {
   var i;
   var outputStr = "";
   for (i = 0; i < obj.buildSteps.length; i++) {
-    outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsLate);
+    outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsDelayed);
 
   }
   document.getElementById("output").innerHTML = outputStr;
