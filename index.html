@@ -5,7 +5,7 @@
 <a href="https://github.com/sirstanel/sirstanel.github.io">Github link</a><br>
 </font>
 
-<textarea class="textarea" rows=50 cols=70 id="input" value="input">
+<textarea class="textarea" rows=50 cols=80 id="input" value="input">
 {
   "Sample build order",
   "secondsDelayed": -3,
@@ -30,7 +30,7 @@
 }
 </textarea>
 <button onclick="GenerateTriggers()">Generate triggers</button>
-<textarea class="textarea" rows=50 cols=70 id="output" placeholder="output"></textarea>
+<textarea class="textarea" rows=50 cols=80 id="output" placeholder="output"></textarea>
 
 <script>
 function GenerateTrigger(buildStep, secondsDelayed) {
@@ -62,7 +62,7 @@ function GenerateTriggers() {
 window.addEventListener("error", handleError, true);
 
 function handleError(evt) {
-  alert("Parse error, click the link to the user guide at the top left to find a JSON parser");
+  alert("Parse error, click the link at the top left to find a JSON parser");
 }
 </script>
 
