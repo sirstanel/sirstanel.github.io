@@ -1,2 +1,2 @@
 # sirstanel.github.io
-A tool to generate triggers for build orders in Scmdraft for Starcraft Broodwar
+Replace text in "xxx" with desired text, also time in "x:xx" with time when the text should appear, modify secondsDelayed (-3) if you want the text to appear sooner or later.
