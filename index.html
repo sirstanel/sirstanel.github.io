@@ -36,8 +36,6 @@
 <textarea class="textarea" rows=50 cols=200 id="output" placeholder="output"></textarea>
 
 <script>
-
-document.getElementById("output").innerHTML = "Test";	
 	
 function GenerateTrigger(buildStep, secondsDelayed) {
   var time = buildStep.time.split(":");
@@ -59,8 +57,8 @@ function GenerateTriggers() {
   var outputStr = "";
   for (i = 0; i < obj.buildSteps.length; i++) {
     outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsDelayed);
-  }
-  document.getElementById("output").innerHTML = outputStr;
+  }	
+  document.getElementById("output").innerHTML = "Test" + outputStr;
   return inputVal
 }
 
