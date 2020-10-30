@@ -8,7 +8,7 @@
 
 <textarea class="textarea" rows=50 cols=200 id="input" value="input">
 {
-  "Title": "Sample build order 6",
+  "Title": "Sample build order 7",
   "secondsDelayed": -3,
   "buildSteps":[
     {"text":"4 probe (5)",                                                                                                        "time":"0:01"},
@@ -36,6 +36,9 @@
 <textarea class="textarea" rows=50 cols=200 id="output" placeholder="output"></textarea>
 
 <script>
+
+document.getElementById("output").innerHTML = "Test";	
+	
 function GenerateTrigger(buildStep, secondsDelayed) {
   var time = buildStep.time.split(":");
   var igtSecondsDelayed = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsDelayed)) * 1.5);
