@@ -8,7 +8,7 @@
 
 <textarea class="textarea" rows=50 cols=200 id="input" value="input">
 {
-  "Title": "Sample build order 5",
+  "Title": "Sample build order 6",
   "secondsDelayed": -3,
   "buildSteps":[
     {"text":"4 probe (5)",                                                                                                        "time":"0:01"},
@@ -54,7 +54,7 @@ function GenerateTriggers() {
   var obj = JSON.parse(inputVal)
   var i;
   var outputStr = "";
-  for (i = 1; i <= obj.buildSteps.length; i++) {
+  for (i = 0; i < obj.buildSteps.length; i++) {
     outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsDelayed);
   }
   document.getElementById("output").innerHTML = outputStr;
