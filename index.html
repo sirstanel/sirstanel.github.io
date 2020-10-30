@@ -46,7 +46,7 @@ function GenerateTrigger(buildStep, secondsDelayed) {
   Actions:
     Display Text Message(Always Display, "${textShortName}");
   }
-'
+  `
 }
 
 function GenerateTriggers() {
@@ -64,7 +64,7 @@ function GenerateTriggers() {
 window.addEventListener("error", handleError, true);
 
 function handleError(evt) {
-  alert("Generate triggers error, please check your input text again");
+  alert("Parse error, click the link to the user guide at the top left to find a JSON parser");
 }
 </script>
 
