@@ -8,7 +8,7 @@
 <textarea class="textarea" rows=50 cols=200 id="input" value="input">
 {
   "Title": "Sample build order",
-  "secondsLate": -3,
+  "secondsDelayed": -3,
   "buildSteps":[
     {"text":"4 probe (5)",                                                                                                        "time":"0:01"},
     {"text":"5 probe (6)",                                                                                                        "time":"0:16"},
@@ -33,13 +33,13 @@
 <textarea class="textarea" rows=50 cols=200 id="output" placeholder="output"></textarea>
 
 <script>
-function GenerateTrigger(buildStep, secondsLate) {
+function GenerateTrigger(buildStep, secondsDelayed) {
   var time = buildStep.time.split(":");
-  var igtSecondsLate = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsLate)) * 1.5);
+  var igtSecondsDelayed = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsDelayed)) * 1.5);
   var textShortName = buildStep.text.substr(buildStep.text);
   return `Trigger("Force 1"){
   Conditions:
-    Elapsed Time(At least, ${igtSecondsLate});
+    Elapsed Time(At least, ${igtSecondsDelayed});
   Actions:
     Display Text Message(Always Display, "${textShortName}");
   }
@@ -52,7 +52,7 @@ function GenerateTriggers() {
   var i;
   var outputStr = "";
   for (i = 0; i < obj.buildSteps.length; i++) {
-    outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsLate);
+    outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsDelayed);
 
   }
   document.getElementById("output").innerHTML = outputStr;
