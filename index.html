@@ -5,43 +5,43 @@
 <a href="https://github.com/sirstanel/sirstanel.github.io">Github link</a><br>
 </font>
 
-<textarea class="textarea" rows=50 cols=100 id="input" value="input">
+<textarea class="textarea" rows=50 cols=200 id="input" value="input">
 {
-  "Sample build order",
+  "_comment": "Sample build order",
   "secondsLate": -3,
   "buildSteps":[
-    {"textDisplay":"4 probe (5)",                                                                                                        "time":"0:01"},
-    {"textDisplay":"5 probe (6)",                                                                                                        "time":"0:16"},
-    {"textDisplay":"6 probe (7)",                                                                                                        "time":"0:29"},
-    {"textDisplay":"7 75% send a probe to natural",                                                                                      "time":"0:38"},
-    {"textDisplay":"7 probe (8)",                                                                                                        "time":"0:42"},
-    {"textDisplay":"8 pylon and send it to mine natural and after it returns to main send it to mine main",                              "time":"0:50"},
-    {"textDisplay":"8 probe (9)",                                                                                                        "time":"0:57"},
-    {"textDisplay":"9 probe (10)",                                                                                                       "time":"1:12"},
-    {"textDisplay":"10 probe (11)",                                                                                                      "time":"1:25"},
-    {"textDisplay":"11 probe (12) and send the 11th probe to natural",                                                                   "time":"1:40"},
-    {"textDisplay":"12 forge and send it to scout horizontically on circuit breakers",                                                   "time":"1:48"},
-    {"textDisplay":"12 probe (13) and send the 13th probe to natural",                                                                   "time":"1:51"},
-    {"textDisplay":"13 nexus",                                                                                                           "time":"2:14"},
-    {"textDisplay":"13 1st cannon at natural",                                                                                           "time":"2:25"},
-    {"textDisplay":"13 probe (14)",                                                                                                      "time":"2:28"},
-    {"textDisplay":"14 probe (15)",                                                                                                      "time":"2:41"}
+    {"text":"4 probe (5)",                                                                                                        "time":"0:01"},
+    {"text":"5 probe (6)",                                                                                                        "time":"0:16"},
+    {"text":"6 probe (7)",                                                                                                        "time":"0:29"},
+    {"text":"7 75% send a probe to natural",                                                                                      "time":"0:38"},
+    {"text":"7 probe (8)",                                                                                                        "time":"0:42"},
+    {"text":"8 pylon and send it to mine natural and after it returns to main send it to mine main",                              "time":"0:50"},
+    {"text":"8 probe (9)",                                                                                                        "time":"0:57"},
+    {"text":"9 probe (10)",                                                                                                       "time":"1:12"},
+    {"text":"10 probe (11)",                                                                                                      "time":"1:25"},
+    {"text":"11 probe (12) and send the 11th probe to natural",                                                                   "time":"1:40"},
+    {"text":"12 forge and send it to scout horizontically on circuit breakers",                                                   "time":"1:48"},
+    {"text":"12 probe (13) and send the 13th probe to natural",                                                                   "time":"1:51"},
+    {"text":"13 nexus",                                                                                                           "time":"2:14"},
+    {"text":"13 1st cannon at natural",                                                                                           "time":"2:25"},
+    {"text":"13 probe (14)",                                                                                                      "time":"2:28"},
+    {"text":"14 probe (15)",                                                                                                      "time":"2:41"}
   ]
 }
 </textarea>
 <button onclick="GenerateTriggers()">Generate triggers</button>
-<textarea class="textarea" rows=50 cols=100 id="output" placeholder="output"></textarea>
+<textarea class="textarea" rows=50 cols=200 id="output" placeholder="output"></textarea>
 
 <script>
 function GenerateTrigger(buildStep, secondsLate) {
   var time = buildStep.time.split(":");
   var igtSecondsLate = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsLate)) * 1.5);
-  var textDisplayShortName = buildStep.textDisplay.substr(buildStep.textDisplay);
+  var textShortName = buildStep.text.substr(buildStep.text);
   return `Trigger("Force 1"){
   Conditions:
     Elapsed Time(At least, ${igtSecondsLate});
   Actions:
-    Display Text Message(Always Display, "${textDisplayShortName}");
+    Display Text Message(Always Display, "${textShortName}");
   }
   `
 }
