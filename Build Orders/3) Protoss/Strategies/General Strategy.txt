@@ -1,0 +1,17 @@
+PvZ Scouting
+The most important thing to scout for early game is zergs 1st gas timing.  You can narrow down his opening build and therefore your response to it by comparing it to pool and ling/drone timings, and especially to your own gas timing with Forge FE:
+
+vs pool first with gas immediately after pool = 1hatch or speedlings
+vs pool first with gas b4 or during lings = 2hatch
+vs pool first with gas after lings, before your own gas = 3hatch
+vs pool first with gas after lings and after your own gas = 4hatch
+
+vs hatch first with gas immediately after pool, before drones finish = 2hatch
+vs hatch first with gas after pool and drones, before or during lings and before your own gas = 3hatch
+vs hatch first with gas after pool, drones, lings and after your own gas = 4hatch
+
+So in general, zerg gas timing after yours means 4hatch, gas slightly before yours means 3hatch, gas way before yours means 2hatch.
+
+To give a brief overview of each of these build categories, 4hatch builds emphasize economy for the zerg and delay tech.  You should minimize cannons and corsairs and maximize ground forces.  3hatch builds allow for a decent economy while also giving zerg faster tech options.  You should minimize cannons and balance your corsairs (or other anti air) and ground forces.  2hatch builds are the most aggressive, fastest tech options for zerg and this means that you need to play defensively, adding multiple safety cannons before your corsair scout.
+
+Note:  When facing a 3hatch build, you would prefer to verify lair or den with your probe.  If you cant, you must add an extra safety cannon to the natural before corsair scout in case of 3hatch hydra.

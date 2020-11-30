@@ -1,0 +1,14 @@
+Transition to lurker guardian (vs. Terran)
+
+Note: This build skips ling speed
+Note: Cadenzie uses 12 hatch, 12 gas, 11 pool to open
+@9 muta - hydra den
+Note: make spare muta to swap out damaged muta
+@100% hydra den - lurker aspect
+@50% lurker aspect - queen's nest
+@50% lurker aspect - make hydra
+@100% lurker aspect - morph lurker
+Note: when you morph first lurkers, you can stop replacing muta
+@100% queen's nest - hive
+@100% hive - greater spire
+@100% greater spire - guardians

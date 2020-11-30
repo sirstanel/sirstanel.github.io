@@ -1,0 +1,153 @@
+112 Nexus (Flash) (vs. Terran)
+
+Nexus first is very good vs barracks expand
+Nexus first is very good on maps with long rush distances like Fighting Spirit
+2 Zealots 2 Dragoons
+You don't go goon range you go robo first 
+
+4 0:01 probe (5)
+5 0:15 probe (6)
+6 0:27 probe (7)
+7 0:40 probe (8)
+8 0:47 pylon
+8 0:53 probe (9)
+9 1:11 probe (10)
+10 1:24 probe (11)
+11 1:35 probe (12)
+11 1:47 send the 11th probe (1:35) to make nexus at natural
+12 1:52 probe (13)
+13 2:04 probe (14)
+14 2:12 gateway and send the probe to scout cross-map
+14 2:17 probe (15)
+15 2:24 2nd gateway
+15 2:29 probe (16)
+16 2:35 gas
+16 2:42 probe (17)
+17 2:53 core and send 4 probes to natural minerals and 3 to gas
+17 3:11 1st zealot
+19 3:12 2nd zealot
+21 3:17 probe (18) at natural
+22 3:22 pylon at main (scouting probe dies to marines)
+21 3:37 1st dragoon
+23 3:38 2nd dragoon and send zealots to kill marines
+25 3:42 probe (18) at natural
+26 3:51 probe (19) at main
+27 3:53 probe (20) at natural
+28 3:55 gas at natural
+28 4:08 probe (21) at main
+29 4:09 probe (22) at natural and send dragoons to attack (do not lose units)
+30 4:22 probe (23) at main
+31 4:23 probe (24) at natural
+32 4:26 robo and send 3 probes to natural gas
+32 4:40 research goon range
+32 4:45 pylon at natural to block vultures
+32 4:46 probe (25) at main
+33 4:47 probe (26) at natural
+34 5:04 citadel
+34 5:05 probe (27) at main
+35 5:06 probe (28) at natural
+36 5:06 3rd dragoon
+38 5:07 4th dragoon
+40 5:13 pylon at natural to block vultures
+40 5:21 probe (28) at main
+41 5:22 probe (29) at natural
+42 5:23 observatory at natural to block vultures
+42 5:30 pylon at main
+42 5:33 probe (30) at main
+43 5:34 probe (31) at natural
+44 5:39 5th dragoon
+46 5:40 6th dragoon
+48 5:45 1st observer (from here you can go DT drop or Arbiters)
+49 5:47 probe (32) at main
+50 5:51 probe (33) at natural
+51 5:52 stargate
+51 5:58 pylon at main
+51 6:04 probe (34) at main
+52 6:05 probe (35) at natural
+53 6:05 templar archives (at 200 gas) and send observer to scout number of factories or enemy 3rd command center
+53 6:16 7th dragoon
+55 6:17 8th dragoon
+57 6:19 probe (36) at main
+58 6:22 probe (37) at natural
+59 6:25 2nd observer
+60 6:32 probe (38) at main
+61 6:33 probe (39) at natural
+62 6:35 3rd gateway
+62 6:38 4th gateway
+62 6:43 probe (40) at main
+63 6:44 probe (41) at natural
+64 6:50 arbiter tribunal
+64 6:55 forge and send 2nd observer to the path between you and enemy to see when he moves out
+64 7:01 probe (42) at main
+65 7:02 probe (43) at natural
+66 7:05 3rd observer
+67 7:07 9th dragoon
+69 7:08 10th dragoon
+71 7:14 probe (44) at main
+72 7:15 probe (45) at natural and get ready to take the 3rd expo
+
+If you see starport just block the dropship with goons and/or make 1 cannon in each base here
+
+73 7:35 probe (46) at main
+74 7:38 probe (47) at natural
+75 7:43 pylon at 3rd
+75 7:45 1st arbiter and keep 3rd observer at natural to intercept vulture drop
+80 7:48 +1 ground weapons
+80 7:53 4th observer
+81 7:57 probe (48) at main
+81 8:06 pylon at main
+82 8:08 probe (49) at natural
+83 8:09 probe (50) at main
+84 8:10 cannon at 3rd and keep 4th observer at main to intercept vulture drop
+84 8:18 probe (51) at natural
+85 8:20 probe (52) at main
+86 8:22 4th expo
+86 8:30 probe (53) at natural
+87 8:35 probe (54) at main
+88 8:40 2 pylons at 4th
+88 8:43 2 more gateways
+88 8:44 probe (55) at natural
+89 8:45 probe (56) at main
+90 8:50 1 more gateway (total of 7 gateways)
+90 8:56 probe (57) at natural
+91 8:57 probe (58) at main and send 12 probes to your 3rd
+92 9:02 probe (59) at natural
+93 9:03 probe (60) at main
+94 9:04 probe (61) at 3rd
+95 9:05 make 4 more dragoons
+103 9:08 research zealot speed
+103 9:15 cannon at 4th and at 3rd
+103 9:20 probe (62) at 3rd
+104 9:30 2nd arbiter and research observer speed
+109 9:33 send 6 probes from main and 6 probes from natural to 4th and make 2nd and 3rd cannon there
+109 9:45 from here only make zealots, gateways and pylons
+123 9:50 2 pylons at 4th
+123 9:58 2 more gateways and 1 more observer and research statis field
+123 10:20 2 more pylons and 4 more gateways
+xxx 10:45 +2 ground weapons and 1 more forge and maybe take a 5th expo
+xxx 11:20 5th expo
+
+Dragoons should be around 14-16, rest are zealots
+
+xxx 11:45 +1 ground armor make a 3rd arbiter and move out with army
+xxx 11:50 3 cannons at 5th
+xxx 12:10 send 4 probes from main and 4 from natural to 5th
+xxx 12:30 the attack begins, keep making zealots and take a 6th
+xxx 13:10 if attack is going well, make 2 more stargates, get 3rd gas, keep making dragoons until you have that magic number
+xxx 13:40 3 cannons at 6th and send 4 probes from main and 2 from natural to 6th
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+

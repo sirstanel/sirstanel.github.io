@@ -1,0 +1,3 @@
+yellow = safe
+red = relatively safe
+i think for this one you want lings spread around
