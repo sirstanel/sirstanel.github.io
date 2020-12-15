@@ -6,3 +6,4 @@
 5) Paste the triggers generated earlier replacing all other existing triggers
 6) Click compile. The checkbox with a blue diamond next to it
 7) Click "Save As" and choose a filename which represents the build order to practice
+8) Test
