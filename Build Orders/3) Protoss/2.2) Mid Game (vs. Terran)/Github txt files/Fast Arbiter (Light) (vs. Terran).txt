@@ -73,7 +73,7 @@
     {"text":"64 templar archives",                                                                                                                                    "time":"7:07"},
     {"text":"64 probe at natural (45)",                                                                                                                               "time":"7:12"},
     {"text":"65 probe at main (46)",                                                                                                                                  "time":"7:12"},
-    {"text":"66 forge and send 8 probes from main to third expo",                                                                                                     "time":"7:20"},
+    {"text":"66 forge and send 8 probes from main to third expo",                                                                                                     "time":"7:24"},
     {"text":"66 probe at natural (47)",                                                                                                                               "time":"7:25"},
     {"text":"67 probe at main (48)",                                                                                                                                  "time":"7:25"},
     {"text":"68 make 3 dragoons",                                                                                                                                     "time":"7:36"},
