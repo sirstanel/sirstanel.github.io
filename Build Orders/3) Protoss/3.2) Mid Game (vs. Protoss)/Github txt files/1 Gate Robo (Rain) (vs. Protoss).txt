@@ -25,7 +25,7 @@
     {"text":"20 probe (17)",                                                                                                                                          "time":"2:55"},
     {"text":"21 research goon range",                                                                                                                                 "time":"2:57"},
     {"text":"21 probe (18)",                                                                                                                                          "time":"3:08"},
-    {"text":"22 pylon",                                                                                                                                               "time":"3:12"},
+    {"text":"22 pylon at entrance for robotics",                                                                                                                      "time":"3:12"},
     {"text":"22 2nd dragoon",                                                                                                                                         "time":"3:18"},
     {"text":"24 probe (19), if last scout, don't send the probe to scout anymore, send the 1st dragoon to scout",                                                     "time":"3:22"},
     {"text":"25 probe (20)",                                                                                                                                          "time":"3:33"},
