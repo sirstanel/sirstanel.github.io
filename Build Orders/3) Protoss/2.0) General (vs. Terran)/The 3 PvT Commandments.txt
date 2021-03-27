@@ -1,0 +1,26 @@
+The 3 PvT Commandments:
+-13 core > probe scout (it's actually closer to a 14 scout, send probe to nat and 15 pylon behind mins in order to have vis of min patches to defend vs BBS)
+-1st goon > range
+-scout with 1st goon (2nd goon stays home), dont waste time chasing scv unless they're easy shots
+-probe or 1st goon scout hits t and we see:
+
+1) bunk at nat with cc not done (means fact into bunk exp) > 2 goons (3rd goon cut, always keep 2nd goon at nat) > nexus > robo (before 3rd goon) > +2 gates  > obs scout (if we're vs a timing we keep making goons/stay on 2 base, if we're vs aca + armory 3rd we drop citadel + forge > 3rd and quick 4th, play greedy/focus on eco and tech)
+
+2) bunk at nat with cc done (means 15cc/gasless exp) > 3 goons (28 nex) > nexus > 4th goon (insta pressure t's bunk with 4 goons hard, try to snipe tank) > robo > 3rd > obs scout > +3 gates
+
+3) no bunk at nat/rines on ramp (means FD/siege exp/2fact, if they don't move down by 4:30'ish means siege or 2 fact) > 3 goon expo  (28 nex) > robo > 4th goon > +2 gates (u should probe cut here to add gates if you dont see t moving down by like 4:30, could be 2 fact) > obs scout
+
+- against any type of 2 base timing you wanna loop around their army w/ goons and cut off reinforcements (assuming you don't have enough to take him head on). this forces terran to chase your goons so they can group up w/ their rally, when they do just fall back and try to pick off vults (buys you a lot of time). if t ignores your goons he's isolating his army, keep picking off reinforcements and sandwich his push.
+
+
+^(PvT) first 3 scenarios where we optimize our opener, next scenario where our b.o changes is when obs scout hits t's main
+
+Obs scout followup after robo > 2g/3g (gate count is personal preference here, depends on micro, i suggest 3g) into 2base citadel vs gas expo (aka this is after we scout t going fact > bunk > exp or FD/siege exp):
+
+- we start citadel and obs scout t's main > drop forge if we scout macro t (armory/3rd cc), double expo behind it and rush arb out > goon/zeal recall main if there's an opening, if not > zeal bomb their 3rd base min line (12-14ish zeals). we get our nat gas early w/ this style, usually after 1-2 probe rounds from nat > gas (non stop probe production until we're saturated well enough on 4 bases, 60-65 probes)
+
+- if we scout 2 base 5 or 6 fact timing we dont need to forge, add gates and go into delayed 2 base arbs, prioritize probe production/hitting pylons/gate macro cycles. excess eco goes into arb tech, start forge after we're out of danger. start arb and get 3rd, focus on eco'ing up and recall rushing. same engagement/recall concepts, only attempt a stasis bust if you feel confident in your lead (easier to do on open maps)
+
+- if we're vs 15cc (aka gasless rax exp) we add +3 gates after 3rd (4g goon production keeps us safe vs early fact timings after taking an early 3rd), constant probe production and add nat gas when ur eco is stable (depends on how well u probe). obs scout t's main, if we see macro play stop goon production > drop cita + forge > 4th. against a timing stay on 3 bases and drop gates with arb tech behind it (no arb tech needed vs 2 base timing, just probe cut and make constant units, arb tech is only vs 3 base heavy fact count +1 timing with no starport).
+
+- lategame goal is to have 12 gates and 2sg arb tech (3 gas) going in main, start adding corner base gates afterwards and go into storm
