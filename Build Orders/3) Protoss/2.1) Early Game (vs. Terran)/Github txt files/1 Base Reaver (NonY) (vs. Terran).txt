@@ -14,17 +14,17 @@
     {"text":"10 probe (11)",                                                                                                                                          "time":"1:22"},
     {"text":"11 probe (12)",                                                                                                                                          "time":"1:33"},
     {"text":"12 gas",                                                                                                                                                 "time":"1:40"},
-    {"text":"12 probe (13)",                                                                                                                                          "time":"1:44"},
-    {"text":"13 core and send probe to scout",                                                                   						      "time":"1:57"},
-    {"text":"13 probe (14)",                                                                                                                 			      "time":"2:03"},
+    {"text":"12 probe (13)",                                                                                                                                          "time":"1:47"},
+    {"text":"13 core and send probe to scout",                                                                   						                                          "time":"1:57"},
+    {"text":"13 probe (14)",                                                                                                                 			                    "time":"2:03"},
     {"text":"14 send 3 probes to gas",                                                                                                                                "time":"2:10"},
-    {"text":"14 probe (15)",                                                                                                                 			      "time":"2:15"},
+    {"text":"14 probe (15)",                                                                                                                 			                    "time":"2:15"},
     {"text":"15 pylon",                                                                                                                                               "time":"2:17"},
     {"text":"15 probe (16)",                                                                                                                                          "time":"2:20"},
     {"text":"16 probe (17)",                                                                                                                                          "time":"2:41"},
     {"text":"17 1st dragoon",                                                                                                                                         "time":"2:42"},
     {"text":"19 probe (18)",                                                                                                                                          "time":"2:46"},
-    {"text":"20 +1 air weapons",                                                                                                                                      "time":"2:57"},
+    {"text":"20 +1 air weapons",                                                                                                                                      "time":"2:53"},
     {"text":"20 probe (19)",                                                                                                                                          "time":"3:07"},
     {"text":"21 cancel +1 air weapons and build robotics",                                                                                                            "time":"3:08"},
     {"text":"21 2nd dragoon",                                                                                                                                         "time":"3:17"},
@@ -54,7 +54,7 @@
     {"text":"47 probe (29)",                                                                                                                                          "time":"5:36"},
     {"text":"48 attack with 3 goons the front and harass with shuttle the main focusing tanks",                                                                       "time":"5:55"},
     {"text":"48 drop zealots first then reaver and keep loading and unloading it (1 zealot dies)",                                                                    "time":"6:10"},
-    {"text":"46 make 2 goons",     														                      "time":"6:26"},
-    {"text":"50 nexus (1 goon dies)",                                                                                                                                 "time":"6:30"}                                                           
+    {"text":"46 make 2 goons",     														                                                                                                        "time":"6:26"},
+    {"text":"50 nexus (1 goon dies)",                                                                                                                                 "time":"6:30"}
   ]
 }
