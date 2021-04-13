@@ -37,7 +37,7 @@
     {"text":"29 shuttle",                                                                                                                                             "time":"4:05"},
     {"text":"31 support bay",                                                                                                                                         "time":"4:11"},
     {"text":"31 pylon",                                                                                                                                               "time":"4:15"},
-    {"text":"31 probe (24)",                                                                                                                                          "time":"4:07"},
+    {"text":"31 probe (24)",                                                                                                                                          "time":"4:17"},
     {"text":"32 probe (25)",                                                                                                                                          "time":"4:20"},
     {"text":"33 reaver",                                                                                                                                              "time":"4:42"},
     {"text":"37 1st zealot",                                                                                                                                          "time":"4:45"},
