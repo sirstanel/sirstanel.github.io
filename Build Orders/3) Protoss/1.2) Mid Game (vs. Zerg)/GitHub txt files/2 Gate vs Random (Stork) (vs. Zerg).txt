@@ -103,6 +103,6 @@
     {"text":"109 probe at main (50)",                                                                                             "time":"9:36"},
     {"text":"110 probe at natural (51)",                                                                                          "time":"9:36"},
     {"text":"111 robotics",                                                                                                       "time":"9:54"},
-    {"text":"END OF BUILD ORDER",                                                                                                 "time":"10:10"}
+    {"text":"END OF BUILD ORDER",                                                                                                 "time":"10:04"}
   ]
 }
