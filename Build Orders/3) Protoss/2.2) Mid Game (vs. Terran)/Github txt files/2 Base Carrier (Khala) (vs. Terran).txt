@@ -39,7 +39,7 @@
     {"text":"31 send 9 probes to natural minerals",                                                                                                                   "time":"4:46"},
     {"text":"31 probe at main (24)",                                                                                                                                  "time":"4:50"},
     {"text":"32 probe at natural (25)",                                                                                                                               "time":"4:54"},
-    {"text":"33 1st gateway and 5th dragoon",                                                                                                                         "time":"4:57"},
+    {"text":"33 2nd gateway and 5th dragoon",                                                                                                                         "time":"4:57"},
     {"text":"35 observatory",                                                                                                                                         "time":"5:03"},
     {"text":"35 probe at main (26)",                                                                                                                                  "time":"5:08"},
     {"text":"36 probe at natural (27)",                                                                                                                               "time":"5:08"},
