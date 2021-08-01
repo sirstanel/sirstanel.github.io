@@ -129,6 +129,7 @@
     {"text":"xx have 16-24 dragoons in army, 3-4 arbiters, 3-4 high templars when engaging and try to trade only zealots",                                            "time":"17:00"},
     {"text":"xx keep an arbiter in position to recall and take as many expos as you can with cannons defending them",                                                 "time":"18:00"},
     {"text":"xx get all upgrades",                                                                                                                                    "time":"18:30"},
-    {"text":"xx get 8-10 more gateways at another main",                                                                                                              "time":"19:30"}
+    {"text":"xx get 8-10 more gateways at another main",                                                                                                              "time":"19:30"},
+    {"text":"xx END OF BUILD ORDER",                                                                                                        			      "time":"19:40"}
   ]
 }
