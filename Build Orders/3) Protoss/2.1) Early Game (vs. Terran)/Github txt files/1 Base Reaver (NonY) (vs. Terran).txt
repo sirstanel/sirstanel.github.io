@@ -62,9 +62,9 @@
     {"text":"50 probe (33)",                                                                                                                                          "time":"6:11"},
     {"text":"51 nexus (1 goon dies)",                                                                                                                                 "time":"6:12"},
     {"text":"49 probe (34)",                                                                                                                                          "time":"6:23"},
-    {"text":"49 make 2 dragoons",                                                                                                                                     "time":"6:32"},
-    {"text":"53 pylon at natural to make wallin",                                                                                                                     "time":"6:33"},
-    {"text":"53 probe (35)",                                                                                                                                          "time":"6:35"},
+    {"text":"50 make 2 dragoons",                                                                                                                                     "time":"6:32"},
+    {"text":"54 pylon at natural to make wallin",                                                                                                                     "time":"6:33"},
+    {"text":"54 probe (35)",                                                                                                                                          "time":"6:35"},
     {"text":"END OF BUILD ORDER",                                                                                                                                     "time":"6:45"}
   ]
 }
