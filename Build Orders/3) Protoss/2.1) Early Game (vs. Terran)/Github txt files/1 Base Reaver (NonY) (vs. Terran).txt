@@ -18,7 +18,7 @@
     {"text":"13 core and send probe to scout",                                                                   						                                          "time":"2:00"},
     {"text":"13 probe (14)",                                                                                                                 			                    "time":"2:03"},
     {"text":"14 send 3 probes to gas",                                                                                                                                "time":"2:05"},
-    {"text":"14 pylon",                                                                                                                 			                        "time":"2:14"},
+    {"text":"14 pylon (block outer minerals with this one)",                                                                               		                        "time":"2:14"},
     {"text":"14 probe (15)",                                                                                                                                          "time":"2:18"},
     {"text":"15 probe (16)",                                                                                                                                          "time":"2:32"},
     {"text":"16 1st dragoon",                                                                                                                                         "time":"2:40"},
