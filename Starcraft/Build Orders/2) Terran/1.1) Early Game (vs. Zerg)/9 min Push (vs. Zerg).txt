@@ -1,0 +1,24 @@
+9 min Push (vs. Zerg)
+
+9 supply
+11 rax
+12 scout
+16 supply
+18 cc
+22 supply
+23 refinery
+25 rax
+32 academy
+38 supply
+38 ebay
+48 supply
+48 factory
+52 refinery
+54 supply
+56 comsats
+58 supply
+60 starport
+64 supply + turrets
+70 science facility
+This strategy counter 3hatch muta into 3rd exp and hive.
+If he hasn't started upgrading to hive when you scan before you move out, add another vessel instead of dropship and move out when vessel is finnished. But before that scan again, if he still hasn't started hive wait for the 2-1 upgrade and move out with a huge army towards his natural. Hotkey 1 2 3 4 5 and use the rest manually.

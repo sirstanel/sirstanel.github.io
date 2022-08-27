@@ -1,0 +1,54 @@
+973-4 (Zero's Fake 3hh) (vs. Protoss)
+
+This is an aggressive opening that is designed to force a play style on the Protoss while allowing you to make drones and hatcheries in order to secure an economic advantage.
+vs Forge Expand
+9 - overlord
+9 - pool
+Scout w/ 10th drone that pops
+11 - hatch at expo
+@100% pool - 2 zerglings
+Note: against forge expand, you only need 2-6 zerglings. first 2 overlords go outside the protoss expo. monitor his first zealot. later these are anti-dt, protect from sair.
+Note: focus on saturating your 3 bases - 9 drones on minerals in main, 3 on main gas, 7 drones on minerals at 2nd expo, 3 drones on minerals at 3rd expo
+13 - hatch at 3rd expo
+12 - gas
+17 - hydra den
+16 - overlord (from main)
+@100% hydra den - hydra speed
+24 - overlord (from main)
+Goto: Transition
+
+vs Gateway Expand
+9 - overlord
+9 - pool
+Scout w/ 10th drone that pops
+11 - hatch at expo
+@100% pool - 2 zerglings
+Note: you will need to make zergling speed and lings.
+Note: first 2 overlords go outside the protoss expo. count his zealots. you will need to protect these later with hydra so you do not lose to dt or let dt out of his base.
+16 - hatch at 3rd expo
+15 - gas
+17 - overlord
+@100 gas - zergling speed
+Note: once toss stops zealot pressure, focus on saturating your 3 bases - 9 drones on minerals in main, 3 on main gas, 7 drones on minerals at 2nd expo, 3 drones on minerals at 3rd expo
+@21-22 hydra den
+24 - overlord
+@100% hydra den - hydra speed
+Goto: Transition
+Transition
+@973 saturation - start hydra production
+27 - overlord
+@100% hydra speed - hydra range
+@9 hydra - hatch at 4th base
+Note: you should try to attack once your first hydra have speed and get to the protoss natural. focus fire cannons with hydra and use the lings (if you have any left) as meat shields. 
+if the toss made too few zealots/cannons continue hydra production and end the game. 
+if the toss made enough cannons or too many cannons, position the hydra to snipe any buildings you can, soft contain, and switch to pure drones. 
+add 2 hatcheries to simcity 2nd and 3rd expos, get your 2nd gas, get a lair, and get an evo chamber.
+watch your soft contain, retreat if they move out.
+@100% evo chamber - +1 ranged attack
+add another 2 hatcheries for 8 total
+Once you have 2 gas mining and ~1.2 mineral saturation at all bases start pumping hydra
+@100% lair - overlord speed
+@100% lair - lurker aspect
+get your 3rd gas
+@100% lurker aspect - morph some lurkers
+@100% +1 ranged attack - +2 ranged attack
