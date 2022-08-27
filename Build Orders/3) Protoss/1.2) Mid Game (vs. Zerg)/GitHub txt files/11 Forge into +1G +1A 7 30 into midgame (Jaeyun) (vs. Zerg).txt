@@ -24,7 +24,7 @@
     {"text":"15 probe (16)",                                                                                                      "time":"2:51"},
     {"text":"16 gas",                                                                                                             "time":"2:58"},
     {"text":"16 probe (17)",                                                                                                      "time":"3:04"},
-    {"text":"17 ~ 700 health send 5 probes to natural minerals",                                                                  "time":"3:16"},
+    {"text":"17 ~700 health send 5 probes to natural minerals",                                                                   "time":"3:16"},
     {"text":"17 probe at main (18)",                                                                                              "time":"3:28"},
     {"text":"18 probe at natural (19)",                                                                                           "time":"3:28"},
     {"text":"19 core at natural and send 3 probes to gas and send scout to scout the 3rd hatchery",                               "time":"3:29"},

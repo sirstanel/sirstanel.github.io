@@ -28,7 +28,7 @@
     {"text":"18 probe at main (19)",                                                                                              "time":"3:32"},
     {"text":"19 core at main and send 3 probes to gas and send scout to scout the 3rd hatchery",                                  "time":"3:29"},
     {"text":"19 1st zealot",                                                                                                      "time":"3:40"},
-    {"text":"21 ~ 700 health send 4 probes to natural minerals",                                                                  "time":"3:41"},
+    {"text":"21 ~700 health send 4 probes to natural minerals",                                                                   "time":"3:41"},
     {"text":"21 probe at main (20)",                                                                                              "time":"3:47"},
     {"text":"22 probe at natural (21)",                                                                                           "time":"3:53"},
     {"text":"23 probe at main (22)",                                                                                              "time":"4:00"},
