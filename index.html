@@ -1,72 +1,581 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.3.0/firebase-firestore.js"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="particles.css">
+	<script src="jquery.timeago.js" type="text/javascript"></script>
+	<script src="jquery.countdown.min.js" type="text/javascript"></script>
+
+	<style type="text/css">
+		body {
+		 margin: 0;
+		 padding-top: 0.8em;
+		 padding-bottom: 0.8em;
+		 font-family:"Neue Hans Kendrick",sans-serif;
+		 font-size:1rem;
+		 font-weight:400;
+		 line-height:1.5;
+		 color:#000;
+		 text-align:left;
+		 background-color:#fad46c;
+		 background-image: linear-gradient(#fad46c, #f6c086, #fad46c, #f6c086);
+		 overflow-x: hidden;
+		}
+		table {
+			color:#000;
+			background-color:#fff;
+		}
+		h1, h2, h3 {
+			margin: 0px;
+			padding: 0em;
+		}
+		.tlm {
+			color:#20a333;
+		}
+		#tableBorder {
+			width: 80%;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			maring-top: 0px;
+		    border: solid #46c144 10px;
+		    border-radius: 16px;
+		    -moz-border-radius: 16px;
+			overflow: auto;
+			background-color: #46c144;
+		}
+		#mainTable_filter input  {
+			background-color: #66d164;
+		}
+		.titleblock {
+			display: grid;
+			grid-template-columns: 184px 1fr 184px;
+			width: 75%;
+			height: 220px;
+			margin-left: auto;
+			margin-right: auto;
+			text-align:center;
+			align-items: center;
+		}
+		.titleblock img {
+			margin: 0px;
+			padding: 0px;
+		}
+		.topStatsContainer {
+			width: 80%;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.topStats {
+			margin: 0em 1.5em;
+			padding: 0px;
+		    border: solid #46c144 10px;
+		    border-radius: 16px;
+		    -moz-border-radius: 16px;
+			background-color: #46c144;
+			text-align: center;
+			display: grid;
+			grid-template-rows: 1fr 2fr;
+		}
+		.topStats h2, h3 {
+			margin: 0px;
+			padding: 0px;
+		}
+		.topStats h3 {
+			color:#fff;
+		}
+		.topStats h2 {
+			background-color: #fff;
+			padding-top: 0.5em;
+			badding-bottom: 0.5em;
+		}
+		#unofficial {
+			transform: rotate(-15deg);
+			position: relative;
+			left: -4.5em;
+			top: 1em;
+			color: #fff;
+			font-size: 80%;
+			-webkit-text-stroke: 0.5px black
+		}
+		#disclaimer {
+		    margin: auto;
+		    width: 80%;
+			padding-top: 0.5em;
+			text-align: center;
+		}
+		#leaderBoardTitle {
+			padding: 0px;
+			margin: 0px;
+		}
+		#payme {
+			display: block;
+			background-color: #eee;
+			height: 250px;
+		    margin: auto;
+			margin-top: 1em;
+			padding: 0.2em;
+			width: 75%;
+			line-height: 1.5em;
+			text-align: center;
+		    border: solid #46c144 5px;
+		    border-radius: 10px;
+		    -moz-border-radius: 10px;
+		}
+		#payme a {
+			color: #000;
+		}
+		#clock {
+			font-size: 150%;
+			margin-top: 0.8em;
+		}
+		.common {
+			color: #444;
+		}
+		.rare {
+			color: #216ea2;
+		}
+		.epic {
+			color: #620068;
+		}
+		.legendary {
+			color: #906400;
+		}
+		.mythical {
+			color: #8d1e1e;
+		}
+		#bgland {
+		     content: '';
+		     width: 420px;
+		     height: 420px;
+		     position: absolute;
+		     display: block;
+		     background: url('');
+		     left: calc(50% - 215px);
+		     top: 20px;
+			 opacity: 0.2;
+			 z-index: -1;
+			 background-position: -160px -140px
+		}
+		#particleToggle {
+		    position:absolute;
+			display: block;
+		    top:0;
+		    right: 1em;
+			font-size: 80%;
+			visibility: hidden;
+		}
+	</style>
+
+	<script>
+		// Initialize Cloud Firestore through Firebase
+		firebase.initializeApp({ projectId: 'digitalpostma-68771' });
+
+		var db = firebase.firestore();
+		var db_name = '';
+		var highlight_wax = '';
+		var event = [];
+		var leader_data = [];
+
+		// Parse URL to get event name
+		var queries = window.location.search.replace(/^\?/, '').split('&'), split;
+		for( var i = 0; i < queries.length; i++ ) {
+			split = queries[i].split('=');
+			if (split[0] === 'event') {
+				db_name = split[1];
+			}
+			else if (split[0] === 'wax') {
+				highlight_wax = split[1];
+			}
+		}
+
+		function toggleParticles() {
+			$("#particleToggle").css('visibility', 'visible');
+			if ($(".wrap").css("visibility") === "visible") {
+				$(".wrap").css('visibility', 'hidden');
+				$("#particleLink").html("Show Particles");
+			} else {
+				$(".wrap").css('visibility', 'visible');
+				$("#particleLink").html("Hide Particles");
+			}
+		}
+
+		function loadEventDetails (event) {
+			startTime = new Date(event.start_time+'Z');
+			endTime = new Date(event.end_time+'Z');
+
+			$(document).ready(function() {
+				$(".wrap").show();
+				$('#event_name').text(event.name);
+				$('#location_info').text(event.location_info);
+				$('#time_info').text(event.time_info);
+				$('#bgland').css('background', "url('" + event.land_img + "')");
+				$('#bgland').css('background-position', "-160px -140px");
+
+				if (startTime > new Date()) {
+					countdownMsg = "starts";
+					countdownTime = startTime;
+				} else {
+					toggleParticles();
+					countdownTime = endTime;
+					countdownMsg = "ends";
+				}
+
+				$('div#clock').countdown(countdownTime, {elapse: true}).on('update.countdown', function(event) {
+					if (event.elapsed) {
+						toggleParticles();
+						if (endTime > new Date()) {
+							countdownMsg = 'ends'
+							$('div#clock').countdown(endTime);
+					  	} else {
+							$(this).html(event.strftime('Event Finished!'));
+							$('div#clock').countdown('stop');
+						}
+			      	} else if (event.offset.totalSeconds < 120) {
+			        	$(this).html(event.strftime('Event ' + countdownMsg + ' in %T seconds'));
+				    } else if (event.offset.totalHours < 1) {
+				        $(this).html(event.strftime('Event ' + countdownMsg + ' in %-M minutes'));
+					} else if (event.offset.totalHours < 2) {
+					  	$(this).html(event.strftime('Event ' + countdownMsg + ' in %-H hour %-M minutes'));
+				    } else {
+				      	$(this).html(event.strftime('Event ' + countdownMsg + ' in %-I hours %-M minutes'));
+				    }
+				  });
+			});
+		}
+
+		function loadLeaderBoard() {
+			db.collection(db_name).doc('leader_board').onSnapshot((doc) => {
+				leader_data = [];
+				total_nft_breakdown = {
+					Abundant : 0,
+					Common : 0,
+					Rare : 0,
+					Epic : 0,
+					Legendary : 0,
+					Mythical : 0,
+				};
+				for (const wallet in doc.data()) {
+					user_stats = doc.data()[wallet];
+					nft_html = user_stats.nft_count
+					if (!jQuery.isEmptyObject(user_stats.nft_rarity)) {
+						if ('Abundant' in user_stats.nft_rarity) {
+							total_nft_breakdown.Abundant += user_stats.nft_rarity.Abundant;
+						}
+						if ('Common' in user_stats.nft_rarity) {
+							nft_html += " <span title='" + user_stats.nft_rarity.Common + " Common' class='common'>C</span>";
+							total_nft_breakdown.Common += user_stats.nft_rarity.Common;
+						}
+						if ('Rare' in user_stats.nft_rarity) {
+							nft_html += " <span title='" + user_stats.nft_rarity.Rare + " Rare' class='rare'>R</span>";
+							total_nft_breakdown.Rare += user_stats.nft_rarity.Rare;
+						}
+						if ('Epic' in user_stats.nft_rarity) {
+							nft_html += " <span title='" + user_stats.nft_rarity.Epic + " Epic' class='epic'>E</span>";
+							total_nft_breakdown.Epic += user_stats.nft_rarity.Epic;
+						}
+						if ('Legendary' in user_stats.nft_rarity) {
+							nft_html += " <span title='" + user_stats.nft_rarity.Legendary + " Legendary' class='legendary'>L</span>";
+							total_nft_breakdown.Legendary += user_stats.nft_rarity.Legendary;
+						}
+						if ('Mythical' in user_stats.nft_rarity) {
+							nft_html += " <span title='" + user_stats.nft_rarity.Mythical + " Mythical' class='mythical'>M</span";
+							total_nft_breakdown.Mythical += user_stats.nft_rarity.Mythical;
+						}
+					}
+			        leader_data.push({
+							'wallet' : wallet,
+							'discord_name' : user_stats.discord_name,
+							'mine_count' : user_stats.mine_count,
+							'total_tlm' : user_stats.total_tlm.toFixed(4),
+							'nft_count' : nft_html,
+							'last_mine' : "<time class='timeago' datetime='" + user_stats.last_mine + "Z'>&nbsp;</time>"
+						});
+
+				}
+				leader_data.sort(function (a, b) {
+					return b.total_tlm - a.total_tlm;
+				});
+
+				var total_miners = 0;
+				var total_mine_count = 0;
+				var total_tlm = 0;
+				var total_nfts = 0;
+				var highlight_row = -1;
+				for (var i = 0; i < leader_data.length; i++) {
+				    leader_data[i].rank = i + 1;
+					if (highlight_wax != '' && highlight_wax == leader_data[i].wallet) {
+						highlight_row = i;
+					}
+					total_mine_count += parseInt(leader_data[i].mine_count);
+					total_tlm += parseFloat(leader_data[i].total_tlm);
+					total_nfts += parseInt(leader_data[i].nft_count);
+					if (parseInt(leader_data[i].mine_count) > 0) {
+						total_miners++
+					}
+				}
+
+				$('#total_miners').text(total_miners);
+				$('#total_nfts').text(total_nfts);
+				nft_summary = [];
+				for (const [type, value] of Object.entries(total_nft_breakdown)) {
+					if (value > 0)
+						nft_summary.push(value + ' ' + type)
+				}
+				$('#total_nfts').attr('title', nft_summary.join(', '));
+				$('#total_tlm').text(total_tlm.toFixed(4));
+				$('#total_mine_count').text(total_mine_count);
+
+				$(document).ready(function() {
+					leader_table.rows().remove();
+					leader_table.rows.add(leader_data);
+					leader_table.rows().invalidate().draw();
+					if (highlight_row > -1)
+						$(leader_table.row( highlight_row ).nodes()).addClass( 'selected' );
+					jQuery("time.timeago").timeago();
+				});
+		    });
+		}
+
+		function queryEventDatabase () {
+			db.collection(db_name).doc('details').get().then((doc) => {
+			    if (doc.exists) {
+			        loadEventDetails(doc.data());
+					$(document).ready(function() { loadLeaderBoard(); });
+			    }
+			}).catch((error) => {
+			    console.log("Error getting event data:", error);
+			});
+		}
+
+		if (!db_name) {
+			db.collection('default').doc('default').get().then((doc) => {
+			    db_name = doc.data().event_name;
+				queryEventDatabase();
+			}).catch((error) => {
+			    console.log("Error connecting to database:", error);
+			});
+		} else {
+			queryEventDatabase();
+		}
+
+        // Prefernces for jquery.timeago
+		(function (factory) {
+		  if (typeof define === 'function' && define.amd) {
+		    define(['jquery'], factory);
+		  } else if (typeof module === 'object' && typeof module.exports === 'object') {
+		    factory(require('jquery'));
+		  } else {
+		    factory(jQuery);
+		  }
+		}(function (jQuery) {
+		  // English shortened
+		  jQuery.timeago.settings.strings = {
+		    prefixAgo: '',
+		    prefixFromNow: null,
+		    suffixAgo: 'ago',
+		    suffixFromNow: "",
+		    seconds: "< 1 min",
+		    minute: "1 min",
+		    minutes: "%d mins",
+		    hour: "1 hour",
+		    hours: "%d hours",
+		    day: "1 day",
+		    days: "%d days",
+		    month: "1 month",
+		    months: "%d montb",
+		    year: "1 year",
+		    years: "%d year",
+		    wordSeparator: " ",
+		    numbers: []
+		  };
+		}));
+
+		// Preferences for jquery.dataTables
+		$.fn.dataTable.ext.errMode = 'none';
+
+	    jQuery.extend( jQuery.fn.dataTableExt.oSort, {
+		    "nft-pre": function (x) {
+		        return parseInt(String(x).substring(0, 2));
+		    },
+		    "nft-asc": function ( a, b ) {
+		        return (a < b);
+		    },
+		    "nft-desc": function ( a, b ) {
+		        return (a > b);
+		    }
+		});
+
+	</script>
+</head>
 <body>
-	
-<font size ="+2">
-<a href="https://github.com/sirstanel/sirstanel.github.io">Github link</a><br>
-</font>
+	<div id="bgland"></div>
+<div class='wrap'>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+  <div class='c'></div>
+</div>
+<div id="particleToggle"><a href="javascript:toggleParticles();" id="particleLink">Hide Particles</a></div>
 
-<textarea class="textarea" rows=50 cols=200 id="input" value="input">
-{
-  "Title": "Sample build order",
-  "secondsDelayed": -5,
-  "buildSteps":[
-    {"text":"4 probe (5)",                                                                                                        "time":"0:05"},
-    {"text":"5 probe (6)",                                                                                                        "time":"0:16"},
-    {"text":"6 probe (7)",                                                                                                        "time":"0:29"},
-    {"text":"7 75% send a probe to natural",                                                                                      "time":"0:38"},
-    {"text":"7 probe (8)",                                                                                                        "time":"0:42"},
-    {"text":"8 pylon and send it to mine natural and after it returns to main send it to mine main",                              "time":"0:50"},
-    {"text":"8 probe (9)",                                                                                                        "time":"0:57"},
-    {"text":"9 probe (10)",                                                                                                       "time":"1:12"},
-    {"text":"10 probe (11)",                                                                                                      "time":"1:25"},
-    {"text":"11 probe (12) and send the 11th probe to natural",                                                                   "time":"1:40"},
-    {"text":"12 forge and send it to scout horizontically on circuit breakers",                                                   "time":"1:48"},
-    {"text":"12 probe (13) and send the 13th probe to natural",                                                                   "time":"1:51"},
-    {"text":"13 nexus",                                                                                                           "time":"2:14"},
-    {"text":"13 1st cannon at natural",                                                                                           "time":"2:25"},
-    {"text":"13 probe (14)",                                                                                                      "time":"2:28"},
-    {"text":"14 probe (15)",                                                                                                      "time":"2:41"}
-  ]
-}
-</textarea>
-	
-<button onclick="GenerateTriggers()">Generate triggers</button>
-	
-<textarea class="textarea" rows=50 cols=200 id="output" placeholder="output"></textarea>
+	<div class="titleblock">
+		<div><img src="MinerMonkey.png" width="170" height="220"></div>
+		<div>
+			<h1 id="event_name">&nbsp;</h1>
+			<h3 id="location_info">Loading Data...</h3>
+			<h3 id="time_info">&nbsp;</h3>
+			<div id="clock"></div>
+		</div>
+		<div><img src="AbacusMonkey.png" width="184" height="220"></div>
+	</div>
 
-<script>
-function GenerateTrigger(buildStep, secondsDelayed) {
-  var time = buildStep.time.split(":");
-  var igtSecondsDelayed = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsDelayed)) * 1.5);
-  var textShortName = buildStep.text.substr(buildStep.text);
-  return `Trigger("Force 1"){
-  Conditions:
-    Elapsed Time(At least, ${igtSecondsDelayed});
-  Actions:
-    Display Text Message(Always Display, "${textShortName}");
-  }
-  `
-}
+	<div class="topStatsContainer">
+		<div class="topStats"><h3>Total Miners</h3><h2 id="total_miners">&nbsp;</h2></div>
+		<div class="topStats"><h3>Mine Count</h3><h2 id="total_mine_count">&nbsp;</h2></div>
+		<div class="topStats"><h3>Total TLM</h3><h2 id="total_tlm">&nbsp;</h2></div>
+		<div class="topStats"><h3>Total NFTs</h3><h2 id="total_nfts" title="">&nbsp;</h2></div>
+	</div>
 
-function GenerateTriggers() {
-  var inputVal = document.getElementById("input").value;
-  var obj = JSON.parse(inputVal)
-  var i;
-  var outputStr = "";
-  for (i = 0; i < obj.buildSteps.length; i++) {
-    outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsDelayed);
-  }	
-  document.getElementById("output").innerHTML = 'Trigger("Force 1"){Conditions:	Elapsed Time(At least, 0); Actions: Set Resources("Current Player", Set To, 50, ore);}' + outputStr;
-  return inputVal
-}
+<center><h2 id="leaderBoardTitle"><div id="unofficial">Unofficial<sup>*</sup></div> Leader Board</h2></center>
 
-window.addEventListener("error", handleError, true);
+		<div id="tableBorder"><table id="mainTable" class="order-column hover row-border nowrap"></table></div>
 
-function handleError(evt) {
-  alert("Generate triggers error, please check input text");
-}
-</script>
+		<div id="disclaimer">* Live results should be accurate, but may not be perfect, official final results will be read from confirmed block-chain transactions after the event.</div>
+		<div id="payme">
+			<img src="qr_ban_18qaddi.png" style="float: right; margin-left: 2em" width="258" height="249">
+		    <img src="https://monkey.banano.cc/api/v1/monkey/ban_18qaddipzz9eyrxkkfhnt61w3uca4k6xt49o36t5rtdwsm1t7ckgq1a1rdst" style="float: left" height="249">
+				<br><br>
+				This project is run for the cryptomonKey community by @digipedro,
+				if you like it please consider sending a little potassium my way!
+				Donate:
 
-</body>
+				<a href="https://creeper.banano.cc/explorer/account/ban_18qaddipzz9eyrxkkfhnt61w3uca4k6xt49o36t5rtdwsm1t7ckgq1a1rdst/history">
+				ban_18qaddi...a1rdst
+				</a>
+		</div>
+
+    <script>
+		$(document).ready(function() {
+		    leader_table = $('#mainTable').DataTable( {
+		        data: leader_data,
+				'paging': false,
+				'info': false,
+		        columns: [
+		            { title: "", data: "rank"},
+		            { title: "Wax", data: "wallet" },
+		            { title: "Discord", data:"discord_name" },
+		            { title: "Mines", data: "mine_count", className: 'dt-center' },
+		            { title: "TLM", data: "total_tlm", className: 'dt-center', class: 'tlm' },
+		            { title: "NFTs", data: "nft_count", className: 'dt-center', sType: 'nft' },
+					{ title: "Last Mine", data: "last_mine", orderable: false }
+		        ]
+		    } );
+		});
+    </script>
+  </body>
+<body>
 </html>
