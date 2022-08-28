@@ -1,3 +1,5 @@
-This is a simple leaderboard webpage for mining events on Alien Worlds.
+Alien Worlds Tools
 
-Learn more about Alien Worlds : https://alienworlds.io/
+https://sirstanel.github.io/
+
+All the dates and times are in server time (UTC)!
