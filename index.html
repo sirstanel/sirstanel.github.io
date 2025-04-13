@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<body>
+	
+<font size ="+2">
+<a href="https://github.com/sirstanel/sirstanel.github.io">Github link</a><br>
+</font>
+
+<textarea class="textarea" rows=50 cols=200 id="input" value="input">
+{
+  "Title": "Sample build order",
+  "secondsDelayed": -5,
+  "buildSteps":[
+    {"text":"4 probe (5)",                                                                                                        "time":"0:05"},
+    {"text":"5 probe (6)",                                                                                                        "time":"0:16"},
+    {"text":"6 probe (7)",                                                                                                        "time":"0:29"},
+    {"text":"7 75% send a probe to natural",                                                                                      "time":"0:38"},
+    {"text":"7 probe (8)",                                                                                                        "time":"0:42"},
+    {"text":"8 pylon and send it to mine natural and after it returns to main send it to mine main",                              "time":"0:50"},
+    {"text":"8 probe (9)",                                                                                                        "time":"0:57"},
+    {"text":"9 probe (10)",                                                                                                       "time":"1:12"},
+    {"text":"10 probe (11)",                                                                                                      "time":"1:25"},
+    {"text":"11 probe (12) and send the 11th probe to natural",                                                                   "time":"1:40"},
+    {"text":"12 forge and send it to scout horizontically on circuit breakers",                                                   "time":"1:48"},
+    {"text":"12 probe (13) and send the 13th probe to natural",                                                                   "time":"1:51"},
+    {"text":"13 nexus",                                                                                                           "time":"2:14"},
+    {"text":"13 1st cannon at natural",                                                                                           "time":"2:25"},
+    {"text":"13 probe (14)",                                                                                                      "time":"2:28"},
+    {"text":"14 probe (15)",                                                                                                      "time":"2:41"}
+  ]
+}
+</textarea>
+	
+<button onclick="GenerateTriggers()">Generate triggers</button>
+	
+<textarea class="textarea" rows=50 cols=200 id="output" placeholder="output"></textarea>
+
+<script>
+function GenerateTrigger(buildStep, secondsDelayed) {
+  var time = buildStep.time.split(":");
+  var igtSecondsDelayed = Math.floor((parseInt(time[0]*60) + parseInt(time[1]) + parseInt(secondsDelayed)) * 1.5);
+  var textShortName = buildStep.text.substr(buildStep.text);
+  return `Trigger("Force 1"){
+  Conditions:
+    Elapsed Time(At least, ${igtSecondsDelayed});
+  Actions:
+    Display Text Message(Always Display, "${textShortName}");
+  }
+  `
+}
+
+function GenerateTriggers() {
+  var inputVal = document.getElementById("input").value;
+  var obj = JSON.parse(inputVal)
+  var i;
+  var outputStr = "";
+  for (i = 0; i < obj.buildSteps.length; i++) {
+    outputStr += GenerateTrigger(obj.buildSteps[i], obj.secondsDelayed);
+  }	
+  document.getElementById("output").innerHTML = 'Trigger("Force 1"){Conditions:	Elapsed Time(At least, 0); Actions: Set Resources("Current Player", Set To, 50, ore);}' + outputStr;
+  return inputVal
+}
+
+window.addEventListener("error", handleError, true);
+
+function handleError(evt) {
+  alert("Generate triggers error, please check input text");
+}
+</script>
+
+</body>
+</html>
